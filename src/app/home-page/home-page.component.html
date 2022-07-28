@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Login</button>
+    <button mat-menu-item>Logout</button>
+  </mat-menu>
+  <span>House Points</span>
+</mat-toolbar>
+<div #home>
+  <mat-grid-list cols="3" rowHeight="1:1">
+    <mat-grid-tile>Gratia</mat-grid-tile>
+    <mat-grid-tile>Philco</mat-grid-tile>
+    <mat-grid-tile>Chara</mat-grid-tile>
+    <mat-grid-tile>Veritas</mat-grid-tile>
+    <mat-grid-tile></mat-grid-tile>
+    <mat-grid-tile>Aevitas</mat-grid-tile>
+  </mat-grid-list>
+</div>

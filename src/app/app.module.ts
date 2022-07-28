@@ -8,10 +8,12 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
