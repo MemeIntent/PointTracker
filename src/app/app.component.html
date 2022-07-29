@@ -3,9 +3,8 @@
     <mat-icon>more_vert</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item>Login</button>
-    <button mat-menu-item>Logout</button>
+    <button mat-menu-item routerLink="teacher">Login</button>
   </mat-menu>
   <span>House Points</span>
 </mat-toolbar>
-<app-home-page></app-home-page>
+<router-outlet></router-outlet>

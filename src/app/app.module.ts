@@ -10,11 +10,14 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AppRoutingModule } from './app-routing.module';
+import {RouterModule} from "@angular/router";
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent
+    HomePageComponent,
+    TeacherPageComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,8 @@ import { AppRoutingModule } from './app-routing.module';
     MatMenuModule,
     MatButtonModule,
     MatIconModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
