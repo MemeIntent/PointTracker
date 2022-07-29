@@ -9,6 +9,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { HomePageComponent } from './home-page/home-page.component';
+import { TeacherPageComponent } from './teacher-page/teacher-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from "@angular/router";
 
