@@ -12,6 +12,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { TeacherPageComponent } from './teacher-page/teacher-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from "@angular/router";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import {RouterModule} from "@angular/router";
     MatButtonModule,
     MatIconModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
