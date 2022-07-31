@@ -1,9 +1,26 @@
-<div #home>
+<div #home xmlns="http://www.w3.org/1999/html">
   <mat-grid-list cols="3" rowHeight="4:3">
-    <mat-grid-tile>Phileo</mat-grid-tile>
-    <mat-grid-tile>Chara</mat-grid-tile>
-    <mat-grid-tile>Gratia</mat-grid-tile>
-    <mat-grid-tile>Veritas</mat-grid-tile>
-    <mat-grid-tile>Aequitas</mat-grid-tile>
+    <mat-grid-tile [style.background]="'#C9253C'">Phileo
+      
+      <mat-grid-tile-footer>We can display the counter here</mat-grid-tile-footer>
+    </mat-grid-tile>
+
+    <mat-grid-tile [style.background]="'#135D32'">Chara
+      <mat-grid-tile-footer>We can display the counter here</mat-grid-tile-footer>
+    </mat-grid-tile>
+
+    <mat-grid-tile [style.background]="'#E39935'">Gratia
+      <mat-grid-tile-footer>We can display the counter here</mat-grid-tile-footer>
+    </mat-grid-tile>
+
+    <mat-grid-tile [style.background]="'#154D89'">Veritas
+      <mat-grid-tile-footer>We can display the counter here</mat-grid-tile-footer>
+    </mat-grid-tile>
+
+    <mat-grid-tile [style.background]="'#5E5E5C'">Aequitas
+      <mat-grid-tile-footer>We can display the counter here</mat-grid-tile-footer>
+    </mat-grid-tile>
+
+    <mat-grid-tile>We can right something here or something</mat-grid-tile>
   </mat-grid-list>
 </div>
