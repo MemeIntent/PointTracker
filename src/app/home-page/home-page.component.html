@@ -1,8 +1,9 @@
 <div #home xmlns="http://www.w3.org/1999/html">
+
   <mat-grid-list cols="3" rowHeight="4:3">
     <mat-grid-tile [style.background]="'#C9253C'">Phileo
-      
-      <mat-grid-tile-footer>We can display the counter here</mat-grid-tile-footer>
+
+      <mat-grid-tile-footer>{{this.phileoNumber}} points</mat-grid-tile-footer>
     </mat-grid-tile>
 
     <mat-grid-tile [style.background]="'#135D32'">Chara
@@ -21,6 +22,7 @@
       <mat-grid-tile-footer>We can display the counter here</mat-grid-tile-footer>
     </mat-grid-tile>
 
-    <mat-grid-tile>We can right something here or something</mat-grid-tile>
+    <mat-grid-tile>Test Button
+    </mat-grid-tile>
   </mat-grid-list>
 </div>

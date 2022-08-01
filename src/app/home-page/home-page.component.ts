@@ -8,6 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class HomePageComponent implements OnInit {
 
 
+  phileoNumber = 12;
+  click() {
+    this.phileoNumber += 1;
+  }
+
+
   constructor() { }
 
 
