@@ -6,7 +6,7 @@ import {TeacherPageComponent} from "./teacher-page/teacher-page.component";
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: HomePageComponent
   },
   {

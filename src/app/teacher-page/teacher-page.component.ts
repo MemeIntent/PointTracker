@@ -14,12 +14,5 @@ export class TeacherPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login() {
-    if (this.password == 'TEST123') {
-      console.log('adjioawjoidjaiodjowiajdowa')
-    } else {
-      console.log("error")
-    }
-  }
 
 }

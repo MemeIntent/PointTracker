@@ -2,6 +2,9 @@
   <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
     <mat-icon>more_vert</mat-icon>
   </button>
+  <button mat-icon-button color="link" aria-label="Example icon button with a home icon" routerLink="home" >
+    <mat-icon>home</mat-icon>
+  </button>
   <mat-menu #menu="matMenu">
     <button mat-menu-item routerLink="teacher">Login</button>
   </mat-menu>
