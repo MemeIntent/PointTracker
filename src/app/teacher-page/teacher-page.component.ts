@@ -6,15 +6,18 @@ import { Output, EventEmitter } from '@angular/core';
   templateUrl: './teacher-page.component.html',
   styleUrls: ['./teacher-page.component.css']
 })
-export class TeacherPageComponent implements OnInit {
 
-  @Output() newItemEvent = new EventEmitter<string>();
+export class TeacherPageComponent {
 
-  addNewItem(value: string) {
-    this.newItemEvent.emit(value);
-  }
+  message: string = "If you see this on the Home Page it works";
+
+  @Output() messageEvent = new EventEmitter<string>();
 
   constructor() { }
+
+  sendMessage() {
+    this.messageEvent.emit(this.message)
+  }
 
   password: string | undefined;
 

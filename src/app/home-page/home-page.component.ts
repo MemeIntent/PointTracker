@@ -6,14 +6,9 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css']
 })
-export class HomePageComponent implements OnInit {
+export class HomePageComponent {
 
-
-  items = ['item1', 'item2', 'item3', 'item4'];
-
-  addItem(newItem: string) {
-    this.items.push(newItem);
-  }
+  message = "Wait for it..."
 
   phileoNumber = 12;
   click() {
@@ -22,6 +17,10 @@ export class HomePageComponent implements OnInit {
 
 
   constructor() { }
+
+  recieveMessage($event:string) {
+    this.message = $event
+  }
 
 
 

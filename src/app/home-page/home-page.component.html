@@ -7,9 +7,12 @@
     </mat-grid-tile>
 
     <mat-grid-tile [style.background]="'#135D32'">Chara
-      <mat-grid-tile-footer>We can display the counter here <div>
-        <app-item-output (newItemEvent)="addItem($event)"></app-item-output>
-      </div></mat-grid-tile-footer>
+      <mat-grid-tile-footer>
+        <p>
+          Message: {{message}}
+          <app-teacher-page (messageEvent)="recieveMessage($event)"></app-teacher-page>
+        </p>
+      </mat-grid-tile-footer>
     </mat-grid-tile>
 
     <mat-grid-tile [style.background]="'#E39935'">Gratia
