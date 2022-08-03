@@ -8,7 +8,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class HomePageComponent {
 
-  message = "Wait for it..."
+  number = 0;
 
   phileoNumber = 12;
   click() {
@@ -18,8 +18,8 @@ export class HomePageComponent {
 
   constructor() { }
 
-  recieveMessage($event:string) {
-    this.message = $event
+  receiveNumber($event:number) {
+    this.number = $event
   }
 
 

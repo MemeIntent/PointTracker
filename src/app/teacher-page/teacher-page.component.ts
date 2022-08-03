@@ -9,14 +9,14 @@ import { Output, EventEmitter } from '@angular/core';
 
 export class TeacherPageComponent {
 
-  message: string = "If you see this on the Home Page it works";
+  number: number = 0;
 
-  @Output() messageEvent = new EventEmitter<string>();
+  @Output() numberEvent = new EventEmitter<number>();
 
   constructor() { }
 
-  sendMessage() {
-    this.messageEvent.emit(this.message)
+  sendNumber(newItem: number) {
+    this.numberEvent.emit(newItem)
   }
 
   password: string | undefined;

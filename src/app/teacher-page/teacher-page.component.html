@@ -1,5 +1,7 @@
 
 
 
+<label for="item-input">Add an item:</label>
+<input type="number" id="item-input" #newItem>
+<button type="button" (click)="sendNumber(newItem.valueAsNumber)">Add to home component</button>
 
-<button (click)="sendMessage()">click me!!!!</button>
