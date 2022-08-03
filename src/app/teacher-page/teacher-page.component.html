@@ -1,8 +1,6 @@
 <p>Teachers, Please Log in</p>
 
 
-<!--<mat-grid-tile>Test Button
-  <button (click)="click()">
-    +! It works!
-  </button>
-</mat-grid-tile>-->
+<label for="item-input">Add an item:</label>
+<input type="text" id="item-input" #newItem>
+<button type="button" (click)="addNewItem(newItem.value)">Add to parent's list</button>
