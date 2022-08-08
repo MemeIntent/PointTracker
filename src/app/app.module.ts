@@ -13,6 +13,7 @@ import { TeacherPageComponent } from './teacher-page/teacher-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from "@angular/router";
 import {FormsModule} from "@angular/forms";
+import {MatSliderModule} from "@angular/material/slider";
 
 
 @NgModule({
@@ -21,18 +22,19 @@ import {FormsModule} from "@angular/forms";
     HomePageComponent,
     TeacherPageComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatGridListModule,
-    MatMenuModule,
-    MatButtonModule,
-    MatIconModule,
-    AppRoutingModule,
-    RouterModule,
-    FormsModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatGridListModule,
+        MatMenuModule,
+        MatButtonModule,
+        MatIconModule,
+        AppRoutingModule,
+        RouterModule,
+        FormsModule,
+        MatSliderModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
