@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import {HomePageComponent} from "./home-page/home-page.component";
 import {TeacherPageComponent} from "./teacher-page/teacher-page.component";
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -11,7 +12,13 @@ const routes: Routes = [
   },
   {
     path: 'teacher',
-    component: TeacherPageComponent
+    component: TeacherPageComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
   }
   ]
 

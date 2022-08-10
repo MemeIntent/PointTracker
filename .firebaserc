@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "test-14baa": {
+      "hosting": {
+        "TEST": [
+          "test-14baa"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "test-14baa"
+  }
+}

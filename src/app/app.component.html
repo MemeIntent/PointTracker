@@ -6,7 +6,9 @@
     <mat-icon>home</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item routerLink="teacher">Login</button>
+    <button mat-menu-item routerLink="teacher">Teacher Panel</button>
+    <button mat-menu-item *ngIf="(afAuth.authState | async) === null" (click)="signIn()">Login</button>
+    <button mat-menu-item routerLink="home" *ngIf="(afAuth.authState | async)" (click)="signOut()">Logout</button>
   </mat-menu>
   <span>House Points</span>
 </mat-toolbar>
