@@ -19,6 +19,10 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -29,12 +33,16 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
   ],
     imports: [
         BrowserModule,
+        MatCardModule,
+        MatFormFieldModule,
         BrowserAnimationsModule,
+        MatInputModule,
         MatToolbarModule,
         MatGridListModule,
         MatMenuModule,
         MatButtonModule,
         MatIconModule,
+        MatSelectModule,
         AppRoutingModule,
         RouterModule,
         FormsModule,

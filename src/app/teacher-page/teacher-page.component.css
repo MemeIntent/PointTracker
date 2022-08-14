@@ -1,0 +1,21 @@
+.first {
+  margin-top: 15px;
+  margin-left: 15px;
+}
+.second {
+  margin-top: 0px;
+  margin-left: 75px;
+}
+.third {
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-right: 850px;
+}
+.center-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}

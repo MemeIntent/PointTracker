@@ -13,14 +13,18 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Promise<boolean | UrlTree> {
     const user = await this.afAuth.currentUser;
-    const isAuthenticated = user ? true : false;
+    let isAuthenticated: boolean = false
+    if (user && user.email) {
+      if (user.email.search("@") != -1) {
+        isAuthenticated = true
+      }
+    } else {
+        isAuthenticated = false
+    }
+
     if (!isAuthenticated) {
       alert('You must be authenticated in order to access this page');
     }
     return isAuthenticated;
-
-
   }
-
-
 }

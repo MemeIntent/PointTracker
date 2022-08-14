@@ -1,5 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Output, EventEmitter } from '@angular/core';
+
+interface Houses {
+  value: string;
+  viewValue: string;
+}
+interface Points {
+  value: number;
+  viewValue: number;
+}
 
 @Component({
   selector: 'app-teacher-page',
@@ -9,20 +17,24 @@ import { Output, EventEmitter } from '@angular/core';
 
 export class TeacherPageComponent {
 
-  number: number = 0;
-
-  @Output() numberEvent = new EventEmitter<number>();
-
   constructor() { }
 
-  sendNumber(newItem: number) {
-    this.numberEvent.emit(newItem)
-  }
+  houses: Houses[] = [
+    {value: 'Aequitas', viewValue: 'Aequitas'},
+    {value: 'Veritas', viewValue: 'Veritas'},
+    {value: 'Gratia', viewValue: 'Gratia'},
+    {value: 'Chara', viewValue: 'Chara'},
+    {value: 'Phileo', viewValue: 'Phileo'}
+  ];
+  points: Points[] = [
+    {value: 1, viewValue: 1},
+    {value: 2, viewValue: 2},
+    {value: 3, viewValue: 3},
+    {value: 4, viewValue: 4},
+    {value: 5, viewValue: 5}
+  ];
 
-  password: string | undefined;
-
-  ngOnInit(): void {
-  }
-
-
+  // submitPoints(this.name, this.reason) {
+  //
+  // }
 }
