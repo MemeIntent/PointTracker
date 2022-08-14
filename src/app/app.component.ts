@@ -12,6 +12,8 @@ import firebase from 'firebase/compat/app';
 })
 export class AppComponent {
 
+
+
   constructor(public afAuth: AngularFireAuth) { }
 
   title = 'TEST';
