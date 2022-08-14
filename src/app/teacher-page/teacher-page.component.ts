@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Output, EventEmitter } from '@angular/core';
 
+
 @Component({
   selector: 'app-teacher-page',
   templateUrl: './teacher-page.component.html',
@@ -9,14 +10,15 @@ import { Output, EventEmitter } from '@angular/core';
 
 export class TeacherPageComponent {
 
-  number: number = 0;
 
-  @Output() numberEvent = new EventEmitter<number>();
+  @Output() numberPoints = new EventEmitter<number>();
+  @Output() nameHouse = new EventEmitter<string>();
 
   constructor() { }
 
-  sendNumber(newItem: number) {
-    this.numberEvent.emit(newItem)
+  sendInfo(houseName: string, pointsAwarded: number) {
+    this.numberPoints.emit(pointsAwarded);
+    this.nameHouse.emit(houseName);
   }
 
   password: string | undefined;

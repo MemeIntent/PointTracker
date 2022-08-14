@@ -7,19 +7,21 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent {
+  @Input() nameHouse = 'nameHouse';
+  @Input() numberPoints = 'numberPoints';
 
-  number = 0;
 
-  phileoNumber = 12;
-  click() {
-    this.phileoNumber += 1;
-  }
+  pointsAwarded = 0;
+
+  phileoNumber = 0;
+
 
 
   constructor() { }
 
-  receiveNumber($event:number) {
-    this.number = $event
+  receiveInfo (houseName: string, pointsAwarded: number) {
+    this.pointsAwarded = this.pointsAwarded + pointsAwarded;
+
   }
 
 
