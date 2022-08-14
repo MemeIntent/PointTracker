@@ -16,14 +16,13 @@ import {FormsModule} from "@angular/forms";
 import {MatSliderModule} from "@angular/material/slider";
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
-
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -39,6 +38,7 @@ import {MatCardModule} from '@angular/material/card';
         MatInputModule,
         MatToolbarModule,
         MatGridListModule,
+        MatDialogModule,
         MatMenuModule,
         MatButtonModule,
         MatIconModule,
@@ -48,7 +48,6 @@ import {MatCardModule} from '@angular/material/card';
         FormsModule,
         MatSliderModule,
         provideFirebaseApp(() => initializeApp(environment.firebase)),
-        provideAuth(() => getAuth()),
         provideFirestore(() => getFirestore())
     ],
   providers: [

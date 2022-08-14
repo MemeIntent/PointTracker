@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-home-page',
@@ -7,24 +7,19 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent {
+//   houses = ['phileo','chara','gratia','veritas','aequitas']
+//   phileo = 0
+//   chara = 0
+//   gratia = 0
+//   veritas = 0
+//   aequitas = 0
+//   constructor(private db: AngularFirestore) { }
+//   for () {
+//     this.db.collection("housePoints").doc().get().subscribe(ref => {
+//     const doc: any = ref.data();
+//
+//     })
+// }
 
-  number = 0;
-
-  phileoNumber = 12;
-  click() {
-    this.phileoNumber += 1;
-  }
-
-
-  constructor() { }
-
-  receiveNumber($event:number) {
-    this.number = $event
-  }
-
-
-
-  ngOnInit(): void {
-  }
 
 }

@@ -12,8 +12,8 @@ const routes: Routes = [
   },
   {
     path: 'teacher',
-    component: TeacherPageComponent
-    // canActivate: [AuthGuard]
+    component: TeacherPageComponent,
+      canActivate: [AuthGuard]
   },
   {
     path: '',

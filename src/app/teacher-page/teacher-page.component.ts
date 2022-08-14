@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 interface Houses {
   value: string;
@@ -16,8 +17,12 @@ interface Points {
 })
 
 export class TeacherPageComponent {
+  name: string = ""
+  reason: string = ""
+  pointval: number = 0
+  house: string = ""
 
-  constructor() { }
+  constructor(private db: AngularFirestore) { }
 
   houses: Houses[] = [
     {value: 'Aequitas', viewValue: 'Aequitas'},
@@ -34,7 +39,18 @@ export class TeacherPageComponent {
     {value: 5, viewValue: 5}
   ];
 
-  // submitPoints(this.name, this.reason) {
-  //
-  // }
+  submitPoints() {
+    this.db.collection("housePoints").doc(this.house).get().subscribe(ref => {
+      const doc: any = ref.data();
+      let current: number = doc.points;
+      this.db.collection("housePoints").doc(this.house).update({points: (current + this.pointval)});
+    })
+  }
+
+  changePoint(value: any) {
+    this.pointval = value;
+  }
+  changeHouse(value: any) {
+    this.house = value;
+  }
 }

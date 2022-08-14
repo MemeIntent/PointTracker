@@ -1,7 +1,7 @@
 <mat-card class="center-screen">
 <mat-form-field appearance="fill" >
   <mat-label>House Select</mat-label>
-  <mat-select>
+  <mat-select (selectionChange)="changeHouse($event.value)">
     <mat-option *ngFor="let house of houses" [value]="house.value">
       {{house.viewValue}}
     </mat-option>
@@ -10,7 +10,7 @@
 <br>
 <mat-form-field appearance="fill" >
   <mat-label>Point Select</mat-label>
-  <mat-select>
+  <mat-select (selectionChange)="changePoint($event.value)">
     <mat-option *ngFor="let point of points" [value]="point.value">
       {{point.viewValue}}
     </mat-option>
@@ -19,13 +19,13 @@
   <br>
 <mat-form-field appearance="fill" >
   <mat-label>Student Name</mat-label>
-  <input matInput [(ngModel)]=''>
+  <input name = "studentName" matInput [(ngModel)]="name">
 </mat-form-field>
   <br>
 <mat-form-field appearance="fill" >
   <mat-label>Reason</mat-label>
-  <input matInput [(ngModel)]=''>
+  <input name = "reason" matInput [(ngModel)]="reason">
 </mat-form-field>
   <br>
-<button mat-raised-button color="primary">Submit</button>
+<button mat-raised-button color="primary" (click)="submitPoints()">Submit</button>
 </mat-card>
