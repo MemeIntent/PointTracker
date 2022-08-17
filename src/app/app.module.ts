@@ -13,7 +13,6 @@ import { TeacherPageComponent } from './teacher-page/teacher-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from "@angular/router";
 import {FormsModule} from "@angular/forms";
-import {MatSliderModule} from "@angular/material/slider";
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
@@ -22,7 +21,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
-import {MatDialogModule} from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
@@ -38,15 +38,15 @@ import {MatDialogModule} from '@angular/material/dialog';
         MatInputModule,
         MatToolbarModule,
         MatGridListModule,
-        MatDialogModule,
         MatMenuModule,
         MatButtonModule,
         MatIconModule,
+        MatSnackBarModule,
         MatSelectModule,
         AppRoutingModule,
         RouterModule,
         FormsModule,
-        MatSliderModule,
+        BrowserModule,
         provideFirebaseApp(() => initializeApp(environment.firebase)),
         provideFirestore(() => getFirestore())
     ],

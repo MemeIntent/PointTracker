@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Injectable} from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import firebase from 'firebase/compat/app';
 
 interface Houses {
   value: string;
@@ -15,14 +17,16 @@ interface Points {
   templateUrl: './teacher-page.component.html',
   styleUrls: ['./teacher-page.component.css']
 })
-
+@Injectable()
 export class TeacherPageComponent {
+
   name: string = ""
   reason: string = ""
   pointval: number = 0
   house: string = ""
 
-  constructor(private db: AngularFirestore) { }
+  constructor(private db: AngularFirestore,
+              private _snackBar: MatSnackBar) { }
 
   houses: Houses[] = [
     {value: 'Aequitas', viewValue: 'Aequitas'},
@@ -40,13 +44,15 @@ export class TeacherPageComponent {
   ];
 
   submitPoints() {
+    const now = new Date().toUTCString()
     this.db.collection("housePoints").doc(this.house).get().subscribe(ref => {
       const doc: any = ref.data();
       let current: number = doc.points;
       this.db.collection("housePoints").doc(this.house).update({points: (current + this.pointval)});
+      this.db.collection("logs").doc(now).set({student: this.name, reason: this.reason, teacher: firebase.auth().currentUser?.email, points: this.pointval});
+      this._snackBar.open("Gave " + this.pointval + " points to " + this.house, "HIDE");
     })
   }
-
   changePoint(value: any) {
     this.pointval = value;
   }
