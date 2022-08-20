@@ -15,7 +15,7 @@ interface Points {
 @Component({
   selector: 'app-teacher-page',
   templateUrl: './teacher-page.component.html',
-  styleUrls: ['./teacher-page.component.css']
+  styleUrls: ['./teacher-page.component.scss']
 })
 @Injectable()
 export class TeacherPageComponent {

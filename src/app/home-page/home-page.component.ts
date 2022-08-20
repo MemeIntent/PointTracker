@@ -5,7 +5,7 @@ import {collection} from "@angular/fire/firestore";
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css']
+  styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent {
   phileo = 0
@@ -13,7 +13,17 @@ export class HomePageComponent {
   gratia = 0
   veritas = 0
   aequitas = 0
-  constructor(private db: AngularFirestore) { }
+
+  constructor(private db: AngularFirestore) {
+  }
+
+  houses = [
+    {name: "Phileo",  color: "#C9253C", score: this.phileo},
+    {name: "Chara",   color: "#135D32", score: this.chara},
+    {name: "Gratia",  color: "#E39935", score: this.gratia},
+    {name: "Veritas",  color: "#154D89", score: this.veritas},
+    {name: "Aequitas",  color: "#5E5E5C", score: this.aequitas}
+  ]
 
   refresh() {
     let collection = this.db.collection('housePoints');
@@ -45,7 +55,24 @@ export class HomePageComponent {
       this.aequitas = doc.points;
     })
   }
+
   public ngOnInit(): void {
     this.refresh()
   }
+
+  // is_highest_score(score: number) {
+  //   return Math.max(...this.houses.map(function map(a) {return a.score})) == score
+  // }
+  //
+  // houses_sorted() {
+  //   return [...this.houses].sort(function points(a, b) {
+  //     if (a.score < b.score) {
+  //       return -1
+  //     } else if (a.score == b.score) {
+  //       return 0
+  //     } else {
+  //       return 1
+  //     }
+  //   }).reverse()
+//   }
 }

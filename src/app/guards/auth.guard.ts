@@ -14,7 +14,7 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot): Promise<boolean | UrlTree> {
     const user = await this.afAuth.currentUser;
     let isAuthenticated: boolean = false
-    let whitelist: string[] = ['eakonnick25@mpcstudent.com','cvbethel24@mpcstudent.com','apgilmore25@mpcstudent.com']
+    let whitelist: string[] = ['eakonnick25@mpcstudent.com','cvbethel24@mpcstudent.com','apgilmore25@mpcstudent.com', "agilmore1064@gmail.com"]
     if (user && user.email) {
       if (user.email.search("@mtparanschool") != -1 || whitelist.includes(user.email)) {
         isAuthenticated = true

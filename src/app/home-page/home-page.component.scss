@@ -1,0 +1,81 @@
+$width-for-shrink: 700px;
+
+mat-grid-list {
+&.new {
+   margin: 4px;
+ }
+}
+
+mat-grid-tile {
+//background: lightskyblue;
+
+  font-size: 24px;
+@media only screen and (max-width: $width-for-shrink) {
+  font-size: 12px;
+}
+
+&:not(.new) {
+   border: solid 4px black;
+ }
+}
+
+.house-score-flex {
+
+&.new {
+   border-radius: 25%;
+   background: rgba(0, 0, 0, 0.5);
+   padding: 20px;
+   min-width: 125px;
+   min-height: 100px;
+
+@media only screen and (max-width: $width-for-shrink) {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+
+color: white
+}
+
+&:not(.new) {
+   color: black
+ }
+
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+
+* {
+  padding: 6px 0;
+  text-align: center;
+}
+
+.house-name {
+  font-size: 24px;
+}
+
+.house-score {
+  font-weight: bold;
+  font-size: 2.5em;
+}
+}
+
+#old-new-toggle {
+  padding: 15px 10px
+}
+
+#leaderboard-container {
+  font-size: 18px;
+  line-height: 0.7em;
+@media only screen and (max-width: $width-for-shrink) {
+  font-size: 12px;
+  line-height: 0.5em;
+}
+
+h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+}

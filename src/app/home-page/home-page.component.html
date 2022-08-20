@@ -1,26 +1,9 @@
 <div #home xmlns="http://www.w3.org/1999/html">
 
-  <mat-grid-list cols="3" rowHeight="4:3">
-    <mat-grid-tile [style.background]="'#C9253C'">Phileo
-      <mat-grid-tile-footer>{{phileo}}</mat-grid-tile-footer>
-    </mat-grid-tile>
+  <mat-grid-list cols="3" rowHeight="4:3" gutterSize="4px">
+    <mat-grid-tile *ngFor="let house of houses" [style.background]="house.color">
+      <div class="house-score-flex">
+        <p class="house-name">{{house.name}}</p>
+        <p class="house-score">{{house.score}}</p>
+      </div>
 
-    <mat-grid-tile [style.background]="'#135D32'">Chara
-      <mat-grid-tile-footer>{{chara}}</mat-grid-tile-footer>
-    </mat-grid-tile>
-
-    <mat-grid-tile [style.background]="'#E39935'">Gratia
-      <mat-grid-tile-footer>{{gratia}}</mat-grid-tile-footer>
-    </mat-grid-tile>
-
-    <mat-grid-tile [style.background]="'#154D89'">Veritas
-      <mat-grid-tile-footer>{{veritas}}</mat-grid-tile-footer>
-    </mat-grid-tile>
-
-    <mat-grid-tile [style.background]="'#5E5E5C'">Aequitas
-      <mat-grid-tile-footer>{{aequitas}}</mat-grid-tile-footer>
-    </mat-grid-tile>
-    <mat-grid-tile>
-    </mat-grid-tile>
-  </mat-grid-list>
-</div>
