@@ -60,19 +60,19 @@ export class HomePageComponent {
     this.refresh()
   }
 
-  // is_highest_score(score: number) {
-  //   return Math.max(...this.houses.map(function map(a) {return a.score})) == score
-  // }
-  //
-  // houses_sorted() {
-  //   return [...this.houses].sort(function points(a, b) {
-  //     if (a.score < b.score) {
-  //       return -1
-  //     } else if (a.score == b.score) {
-  //       return 0
-  //     } else {
-  //       return 1
-  //     }
-  //   }).reverse()
-//   }
+  is_highest_score(score: number) {
+    return Math.max(...this.houses.map(function map(a) {return a.score})) == score
+  }
+
+  houses_sorted() {
+    return [...this.houses].sort(function points(a, b) {
+      if (a.score < b.score) {
+        return -1
+      } else if (a.score == b.score) {
+        return 0
+      } else {
+        return 1
+      }
+    }).reverse()
+  }
 }

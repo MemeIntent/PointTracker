@@ -6,4 +6,13 @@
         <p class="house-name">{{house.name}}</p>
         <p class="house-score">{{house.score}}</p>
       </div>
+    </mat-grid-tile>
 
+    <mat-grid-tile>
+      <div id="leaderboard-container">
+        <h1>Leaderboard</h1>
+        <p *ngFor="let house of houses_sorted()"><span *ngIf="is_highest_score(house.score)">🏆 </span>{{house.name}}: {{house.score}} Points</p>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
