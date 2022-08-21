@@ -1,6 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import {collection} from "@angular/fire/firestore";
+import {getValue} from "@angular/fire/remote-config";
+import {getDatabase} from "@angular/fire/database";
 
 @Component({
   selector: 'app-home-page',
@@ -14,16 +16,11 @@ export class HomePageComponent {
   veritas = 0
   aequitas = 0
 
+
+
   constructor(private db: AngularFirestore) {
   }
 
-  houses = [
-    {name: "Phileo",  color: "#C9253C", score: this.phileo},
-    {name: "Chara",   color: "#135D32", score: this.chara},
-    {name: "Gratia",  color: "#E39935", score: this.gratia},
-    {name: "Veritas",  color: "#154D89", score: this.veritas},
-    {name: "Aequitas",  color: "#5E5E5C", score: this.aequitas}
-  ]
 
   refresh() {
     let collection = this.db.collection('housePoints');
@@ -36,7 +33,7 @@ export class HomePageComponent {
 
     phildoc.get().subscribe(ref => {
       const doc: any = ref.data();
-      this.phileo = doc.points;
+      this.phileo = 213; //doc.points
     })
     chardoc.get().subscribe(ref => {
       const doc: any = ref.data();
@@ -55,6 +52,15 @@ export class HomePageComponent {
       this.aequitas = doc.points;
     })
   }
+
+  houses = [
+    {name: "Phileo",  color: "#C9253C", score: this.phileo},
+    {name: "Chara",   color: "#135D32", score: this.chara},
+    {name: "Gratia",  color: "#E39935", score: this.gratia},
+    {name: "Veritas",  color: "#154D89", score: this.veritas},
+    {name: "Aequitas",  color: "#5E5E5C", score: this.aequitas}
+  ]
+
 
   public ngOnInit(): void {
     this.refresh()
