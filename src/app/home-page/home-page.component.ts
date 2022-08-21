@@ -33,23 +33,23 @@ export class HomePageComponent {
 
     phildoc.get().subscribe(ref => {
       const doc: any = ref.data();
-      this.phileo = 213; //doc.points
+      this.houses[0].score = doc.points;
     })
     chardoc.get().subscribe(ref => {
       const doc: any = ref.data();
-      this.chara = doc.points;
+      this.houses[1].score = doc.points;
     })
     gradoc.get().subscribe(ref => {
       const doc: any = ref.data();
-      this.gratia = doc.points;
+      this.houses[2].score = doc.points;
     })
     verdoc.get().subscribe(ref => {
       const doc: any = ref.data();
-      this.veritas = doc.points;
+      this.houses[3].score = doc.points;
     })
     aeqdoc.get().subscribe(ref => {
       const doc: any = ref.data();
-      this.aequitas = doc.points;
+      this.houses[4].score = doc.points;
     })
   }
 
