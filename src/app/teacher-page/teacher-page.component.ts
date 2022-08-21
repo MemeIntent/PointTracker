@@ -49,7 +49,7 @@ export class TeacherPageComponent {
       const doc: any = ref.data();
       let current: number = doc.points;
       this.db.collection("housePoints").doc(this.house).update({points: (current + this.pointval)});
-      this.db.collection("logs").doc(now).set({student: this.name, reason: this.reason, teacher: firebase.auth().currentUser?.email, points: this.pointval});
+      this.db.collection("logs").doc(now).set({student: this.name, reason: this.reason, teacher: firebase.auth().currentUser?.email, points: this.pointval, house: this.house});
       this._snackBar.open("Gave " + this.pointval + " points to " + this.house, "HIDE");
     })
   }

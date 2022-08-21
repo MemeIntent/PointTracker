@@ -68,8 +68,9 @@ justify-content: center;
 }
 
 #leaderboard-container {
-  font-size: 18px;
-  line-height: 0.7em;
+  font-size: 30px;
+  line-height: 1em;
+  overflow: auto;
 @media only screen and (max-width: $width-for-shrink) {
   font-size: 12px;
   line-height: 0.5em;
