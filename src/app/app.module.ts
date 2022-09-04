@@ -22,13 +22,15 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { LogViewerComponent } from './log-viewer/log-viewer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    TeacherPageComponent
+    TeacherPageComponent,
+    LogViewerComponent
   ],
     imports: [
         BrowserModule,

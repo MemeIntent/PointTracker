@@ -7,6 +7,7 @@
   </button>
   <mat-menu #menu="matMenu">
     <button mat-menu-item routerLink="teacher" *ngIf="(afAuth.authState | async)">Teacher Panel</button>
+    <button mat-menu-item routerLink="logViewer" *ngIf="(afAuth.authState | async)">Log View</button>
     <button mat-menu-item *ngIf="(afAuth.authState | async) === null" (click)="signIn()">Login</button>
     <button mat-menu-item routerLink="home" *ngIf="(afAuth.authState | async)" (click)="signOut()">Logout</button>
   </mat-menu>

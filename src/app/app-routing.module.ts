@@ -3,6 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import {HomePageComponent} from "./home-page/home-page.component";
 import {TeacherPageComponent} from "./teacher-page/teacher-page.component";
 import { AuthGuard } from './guards/auth.guard';
+import {LogViewerComponent} from "./log-viewer/log-viewer.component";
+import {canActivate} from "@angular/fire/auth-guard";
+import {SuperAuthGuard} from "./guards/super-auth.guard";
 
 const routes: Routes = [
   {
@@ -18,6 +21,12 @@ const routes: Routes = [
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'
+  },
+  {
+    path: 'logViewer',
+    component: LogViewerComponent,
+    canActivate:[SuperAuthGuard],
+
   }
   ]
 
