@@ -4,7 +4,6 @@ import {AngularFirestore} from "@angular/fire/compat/firestore";
 import { getDatabase } from "firebase/database";
 import {collection} from "@angular/fire/firestore";
 
-const database = getDatabase();
 
 
 @Component({

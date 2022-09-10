@@ -59,4 +59,8 @@ export class TeacherPageComponent {
   changeHouse(value: any) {
     this.house = value;
   }
+
+  confirmButton() {
+    confirm("Points are added! Thank you for entering House Points!")
+  }
 }
