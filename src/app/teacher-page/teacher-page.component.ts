@@ -2,6 +2,7 @@ import {Component, Injectable} from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import firebase from 'firebase/compat/app';
+import {Router} from "@angular/router";
 
 interface Houses {
   value: string;
@@ -25,7 +26,7 @@ export class TeacherPageComponent {
   pointval: number = 0
   house: string = ""
 
-  constructor(private db: AngularFirestore,
+  constructor(private db: AngularFirestore, private router: Router,
               private _snackBar: MatSnackBar) { }
 
   houses: Houses[] = [
@@ -58,5 +59,13 @@ export class TeacherPageComponent {
   }
   changeHouse(value: any) {
     this.house = value;
+  }
+
+  goToConfirmation($myParam: string = '') {
+    const navigationDetails: string[] = ['/confirmation']
+    if($myParam.length) {
+      navigationDetails.push($myParam)
+    }
+    this.router.navigate(navigationDetails)
   }
 }

@@ -27,5 +27,5 @@
   <input name = "reason" matInput [(ngModel)]="reason">
 </mat-form-field>
   <br>
-<button mat-raised-button color="primary" (click)="submitPoints()">Submit</button>
+<button routerLink="confirmation" mat-raised-button color="primary" (click)="submitPoints(); goToConfirmation()" >Submit</button>
 </mat-card>

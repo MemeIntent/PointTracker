@@ -6,6 +6,7 @@ import { AuthGuard } from './guards/auth.guard';
 import {LogViewerComponent} from "./log-viewer/log-viewer.component";
 import {canActivate} from "@angular/fire/auth-guard";
 import {SuperAuthGuard} from "./guards/super-auth.guard";
+import {ConfirmationComponent} from "./confirmation/confirmation.component";
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
     component: LogViewerComponent,
     canActivate:[SuperAuthGuard],
 
+  },
+  {
+    path: 'confirmation',
+    component: ConfirmationComponent
   }
   ]
 

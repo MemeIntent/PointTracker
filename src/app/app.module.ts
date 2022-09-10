@@ -23,6 +23,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { LogViewerComponent } from './log-viewer/log-viewer.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { LogViewerComponent } from './log-viewer/log-viewer.component';
     AppComponent,
     HomePageComponent,
     TeacherPageComponent,
-    LogViewerComponent
+    LogViewerComponent,
+    ConfirmationComponent
   ],
     imports: [
         BrowserModule,
