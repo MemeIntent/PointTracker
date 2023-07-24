@@ -2,7 +2,7 @@
   <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
     <mat-icon>more_vert</mat-icon>
   </button>
-  <button mat-icon-button color="link" aria-label="Example icon button with a home icon" routerLink="home" >
+  <button mat-icon-button color="link" aria-label="Example icon button with a home icon" routerLink="home">
     <mat-icon>home</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
@@ -11,6 +11,7 @@
     <button mat-menu-item *ngIf="(afAuth.authState | async) === null" (click)="signIn()">Login</button>
     <button mat-menu-item routerLink="home" *ngIf="(afAuth.authState | async)" (click)="signOut()">Logout</button>
   </mat-menu>
-  <span>House Points</span>
+  <span class="toolbar-title">House Points</span>
 </mat-toolbar>
 <router-outlet></router-outlet>
+

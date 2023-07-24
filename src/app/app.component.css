@@ -1,0 +1,20 @@
+.custom-toolbar {
+  background-color: green;
+}
+
+.mat-toolbar-row {
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+button {
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.mat-menu-item {
+  position: relative;
+  z-index: 2;
+}

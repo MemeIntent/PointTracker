@@ -90,15 +90,15 @@ export class HomePageComponent {
 
   getColor (place: Number): string {
     if (place === 1) {
-          const house = this.houses.find((house) => house.score === this.getHighestScore());
+          const house = this.houses.find((house) => house.name === this.getHighestName());
           return house ? house.color : '';
         }
     if (place === 2) {
-      const house = this.houses.find((house) => house.score === this.getSecondHighestScore());
+      const house = this.houses.find((house) => house.name === this.getSecondHighestName());
       return house ? house.color : '';
     }
     if (place === 3) {
-      const house = this.houses.find((house) => house.score === this.getThirdHighestScore());
+      const house = this.houses.find((house) => house.name === this.getThirdHighestName());
       return house ? house.color : '';
     }
     else {
@@ -123,7 +123,11 @@ export class HomePageComponent {
   }
 
   getHighestName(): string {
-    const house = this.houses.find((house) => house.score === this.getHighestScore());
+    const namesAndScores: [string, number][] = this.houses.map((house) => [house.name, house.score]);
+    namesAndScores.sort((a, b) => b[1] - a[1]);
+    const highestName = namesAndScores[0][0];
+
+    const house = this.houses.find((house) => house.name === highestName);
     return house ? house.name : '';
   }
 
@@ -133,89 +137,85 @@ export class HomePageComponent {
   }
 
   getSecondHighestScore(): number {
-    const scores = this.houses.map((house) => house.score);
-    const uniqueScores = Array.from(new Set(scores));
-    const sortedScores = uniqueScores.sort((a, b) => b - a);
-
-    if (sortedScores.length >= 2) {
-      return sortedScores[1];
-    } else {
-      return 0;
-    }
+    const namesAndScores: [string, number][] = this.houses.map((house) => [house.name, house.score]);
+    namesAndScores.sort((a, b) => b[1] - a[1]);
+    const secondHighestScore = namesAndScores[1][1];
+    return secondHighestScore;
   }
 
   getSecondHighestName(): string {
-    const house = this.houses.find((house) => house.score === this.getSecondHighestScore());
+    const namesAndScores: [string, number][] = this.houses.map((house) => [house.name, house.score]);
+    namesAndScores.sort((a, b) => b[1] - a[1]);
+    const secondHighestName = namesAndScores[1][0];
+
+    const house = this.houses.find((house) => house.name === secondHighestName);
     return house ? house.name : '';
   }
 
   getSecondHighestImage(): string | undefined {
-    const house = this.houses.find((house) => house.score === this.getSecondHighestScore());
+    const house = this.houses.find((house) => house.name === this.getSecondHighestName());
     return house ? house.imageUrl : undefined;
   }
 
   getThirdHighestScore(): number {
-    const scores = this.houses.map((house) => house.score);
-    const uniqueScores = Array.from(new Set(scores));
-    const sortedScores = uniqueScores.sort((a, b) => b - a);
-
-    if (sortedScores.length >= 3) {
-      return sortedScores[2];
-    } else {
-      return 0;
-    }
+    const namesAndScores: [string, number][] = this.houses.map((house) => [house.name, house.score]);
+    namesAndScores.sort((a, b) => b[1] - a[1]);
+    const thirdHighestScore = namesAndScores[2][1];
+    return thirdHighestScore;
   }
 
   getThirdHighestName(): string {
-    const house = this.houses.find((house) => house.score === this.getThirdHighestScore());
+    const namesAndScores: [string, number][] = this.houses.map((house) => [house.name, house.score]);
+    namesAndScores.sort((a, b) => b[1] - a[1]);
+    const thirdHighestName = namesAndScores[2][0];
+
+    const house = this.houses.find((house) => house.name === thirdHighestName);
     return house ? house.name : '';
   }
 
   getThirdHighestImage(): string | undefined {
-    const house = this.houses.find((house) => house.score === this.getThirdHighestScore());
+    const house = this.houses.find((house) => house.name === this.getThirdHighestName());
     return house ? house.imageUrl : undefined;
   }
 
   getFourthHighestScore(): number {
-    const scores = this.houses.map((house) => house.score);
-    const uniqueScores = Array.from(new Set(scores));
-    const sortedScores = uniqueScores.sort((a, b) => b - a);
-
-    if (sortedScores.length >= 4) {
-      return sortedScores[3];
-    } else {
-      return 0;
-    }
+    const namesAndScores: [string, number][] = this.houses.map((house) => [house.name, house.score]);
+    namesAndScores.sort((a, b) => b[1] - a[1]);
+    const fourthHighestScore = namesAndScores[3][1];
+    return fourthHighestScore;
   }
 
   getFourthHighestName(): string {
-    const house = this.houses.find((house) => house.score === this.getFourthHighestScore());
+    const namesAndScores: [string, number][] = this.houses.map((house) => [house.name, house.score]);
+    namesAndScores.sort((a, b) => b[1] - a[1]);
+    const fourthHighestName = namesAndScores[3][0];
+
+    const house = this.houses.find((house) => house.name === fourthHighestName);
     return house ? house.name : '';
   }
 
   getFourthHighestImage(): string | undefined {
-    const house = this.houses.find((house) => house.score === this.getFourthHighestScore());
+    const house = this.houses.find((house) => house.name === this.getFourthHighestName());
     return house ? house.imageUrl : undefined;
   }
 
   getFifthHighestScore(): number {
-    const scores = this.houses.map((house) => house.score);
-    const uniqueScores = Array.from(new Set(scores));
-    const sortedScores = uniqueScores.sort((a, b) => b - a);
-
-    if (sortedScores.length >= 5) {
-      return sortedScores[4];
-    } else {
-      return 0;
-    }
+    const namesAndScores: [string, number][] = this.houses.map((house) => [house.name, house.score]);
+    namesAndScores.sort((a, b) => b[1] - a[1]);
+    const thirdHighestScore = namesAndScores[4][1];
+    return thirdHighestScore;
   }
   getFifthHighestName(): string {
-    const house = this.houses.find((house) => house.score === this.getFifthHighestScore());
+    const namesAndScores: [string, number][] = this.houses.map((house) => [house.name, house.score]);
+    namesAndScores.sort((a, b) => b[1] - a[1]);
+    const fifthHighestScore = namesAndScores[4][0];
+
+    const house = this.houses.find((house) => house.name === fifthHighestScore);
     return house ? house.name : '';
   }
 
   getFifthHighestImage(): string | undefined {
-    const house = this.houses.find((house) => house.score === this.getFifthHighestScore());
+    const house = this.houses.find((house) => house.name === this.getFifthHighestName());
     return house ? house.imageUrl : undefined;
   }
 
